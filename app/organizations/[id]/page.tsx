@@ -61,7 +61,7 @@ export default async function OrgDetailPage({ params }: { params: Promise<{ id: 
             )}
             <div>
               <div style={{ fontSize: 11, color: '#4A5568', marginBottom: 6 }}>CHECK SIZE</div>
-              <div style={{ fontSize: 14, color: '#D4DBE8', fontWeight: 600 }}>{formatCheckSize(org.check_size_min, org.check_size_max)}</div>
+              <div style={{ fontSize: 14, color: '#D4DBE8', fontWeight: 600 }}>{formatCheckSize(org.check_size_min ?? null, org.check_size_max ?? null)}</div>
             </div>
           </div>
         </div>
