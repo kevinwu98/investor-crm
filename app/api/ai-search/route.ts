@@ -68,7 +68,7 @@ async function searchWebFirms(query: string, internalNames: string[]): Promise<E
 
   // Try Responses API with web search
   try {
-    // @ts-expect-error — responses typings vary by SDK version
+    // @ts-ignore - responses typings vary by SDK version
     const res = await openai.responses.create({
       model: 'gpt-4o-mini',
       tools: [{ type: 'web_search_preview' }],
