@@ -74,7 +74,7 @@ async function searchWebFirms(query: string, internalNames: string[]): Promise<E
       tools: [{ type: 'web_search_preview' }],
       input: `Find 8 specific investment firms that match this description: "${query}". ${exclude} For each firm include: name, website, one-sentence description, typical investment stages, and sectors.`,
     })
-    // @ts-expect-error
+    // @ts-ignore
     rawText = res.output_text ?? null
   } catch {
     // Fallback: use model knowledge (no live web)
