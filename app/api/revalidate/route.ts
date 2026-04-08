@@ -10,6 +10,6 @@ export async function POST(req: Request) {
   if (!process.env.REVALIDATE_SECRET || secret !== process.env.REVALIDATE_SECRET) {
     return Response.json({ ok: false, error: 'unauthorized' }, { status: 401 })
   }
-  revalidateTag(AIRTABLE_TAG)
+  revalidateTag(AIRTABLE_TAG, 'everything')
   return Response.json({ ok: true, revalidated: AIRTABLE_TAG, at: new Date().toISOString() })
 }
